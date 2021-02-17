@@ -13,6 +13,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\Tenant::create([
+            'name' => 'De Gazelle',
+            'subdomain' => 'gazelle',
+            'domain' => 'gazelle.test',
+        ]);
+
+        \App\Models\Tenant::create([
+            'name' => 'Het Boszicht',
+            'subdomain' => 'boszicht',
+            'domain' => 'boszicht.test',
+            'use_domain' => true,
+        ]);
+
+
     }
 }
